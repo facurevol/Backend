@@ -6,13 +6,17 @@ class Usuario {
         this.pets = pets;
     }
 
-   
-
     getFullName(){
-        return `Nombre completo: ${this.name} ${this.surname}`
+        return `Nombre completo: ${this.name} ${this.surname}`        
     }
 
    
+    
+    
+
+   countPets(){
+        return this.pets.length
+   }
 
    getBooks() {      
     this.books.forEach(book => {
@@ -23,20 +27,17 @@ class Usuario {
      
 }
 
-
-
 const user1 = new Usuario('Florencia', 'Perez', [{title: 'El Señor de los anillos', author: 'William Golding'}, {title: 'Fundacion', author: 'Isaac Asimov'}], ['perro', 'gato', 'conejo']);
 const user2 = new Usuario('Facundo', 'Revol', [{title: 'El Señor de los anillos', author: 'William Golding'}, {title: 'Fundacion', author: 'Isaac Asimov'}], ['perro', 'conejo']);
 const user3 = new Usuario('Clara', 'Hummer', [{title: 'El Señor de los anillos', author: 'William Golding'}, {title: 'Fundacion', author: 'Isaac Asimov'}], ['gato', 'conejo']);
 
-console.log(user1);
-console.log(user2);
-console.log(user3);
 
 //getFullName:
 console.log(user1.getFullName());
 console.log(user2.getFullName());
 console.log(user3.getFullName());
+
+console.log(user3.addPets());
 
 //add pets:
 user1.pets.push('loro');
@@ -57,10 +58,9 @@ console.log(user2.books);
 console.log(user3.books);
 
 //countPets:
-console.log(user1.pets.length);
-console.log(user2.pets.length);
-console.log(user3.pets.length);
-
+console.log(user1.countPets());
+console.log(user2.countPets());
+console.log(user3.countPets());
 
 //getBooks:
 console.log(user1.getBooks());
