@@ -3,16 +3,12 @@ class Usuario {
         this.name = name;
         this.surname = surname;
         this.books = books;
-        this.pets = pets;
+        this.pets = [];
     }
 
     getFullName(){
         return `Nombre completo: ${this.name} ${this.surname}`        
     }
-
-   
-    
-    
 
    countPets(){
         return this.pets.length
@@ -36,8 +32,6 @@ const user3 = new Usuario('Clara', 'Hummer', [{title: 'El Señor de los anillos'
 console.log(user1.getFullName());
 console.log(user2.getFullName());
 console.log(user3.getFullName());
-
-console.log(user3.addPets());
 
 //add pets:
 user1.pets.push('loro');
