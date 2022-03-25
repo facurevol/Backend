@@ -3,7 +3,7 @@ class Usuario {
         this.name = name;
         this.surname = surname;
         this.books = books;
-        this.pets = [];
+        this.pets = pets;
     }
 
     getFullName(){
