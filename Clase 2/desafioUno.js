@@ -1,31 +1,29 @@
 class Usuario {
-    constructor(name, surname, books, pets){
+    constructor(name, surname, books, pets) {
         this.name = name;
         this.surname = surname;
         this.books = books;
         this.pets = pets;
     }
 
-    getFullName(){
-        return `Nombre completo: ${this.name} ${this.surname}`        
+    getFullName() {
+        return `Nombre completo: ${this.name} ${this.surname}`
     }
 
-   countPets(){
-        return this.pets.length
-   }
+    countPets() {
+        return `${this.name} tiene: ${this.pets.length} mascotas`
+    }
 
-   getBooks() {      
-    this.books.forEach(book => {
-        console.log(book.title)
-    });
-           
-  }
-     
+    getBooks() {
+        const nameBooks = this.books.map(book => book.title)
+        console.log(nameBooks);
+    }
+
 }
 
-const user1 = new Usuario('Florencia', 'Perez', [{title: 'El Señor de los anillos', author: 'William Golding'}, {title: 'Fundacion', author: 'Isaac Asimov'}], ['perro', 'gato', 'conejo']);
-const user2 = new Usuario('Facundo', 'Revol', [{title: 'El Señor de los anillos', author: 'William Golding'}, {title: 'Fundacion', author: 'Isaac Asimov'}], ['perro', 'conejo']);
-const user3 = new Usuario('Clara', 'Hummer', [{title: 'El Señor de los anillos', author: 'William Golding'}, {title: 'Fundacion', author: 'Isaac Asimov'}], ['gato', 'conejo']);
+const user1 = new Usuario('Florencia', 'Perez', [{ title: 'El Señor de los anillos', author: 'William Golding' }, { title: 'Fundacion', author: 'Isaac Asimov' }], ['perro', 'gato', 'conejo']);
+const user2 = new Usuario('Facundo', 'Revol', [{ title: 'El Señor de los anillos', author: 'William Golding' }, { title: 'Fundacion', author: 'Isaac Asimov' }], ['perro', 'conejo']);
+const user3 = new Usuario('Clara', 'Hummer', [{ title: 'El Señor de los anillos', author: 'William Golding' }, { title: 'Fundacion', author: 'Isaac Asimov' }], ['gato', 'conejo']);
 
 
 //getFullName:
@@ -43,9 +41,9 @@ console.log(user2.pets);
 console.log(user3.pets);
 
 //add books:
-user1.books.push({title: 'El libro 2', author: 'Autor 2'});
-user2.books.push({title: 'El libro 3', author: 'autor 3'});
-user3.books.push({title: 'El libro 4', author: 'Autor 4'});
+user1.books.push({ title: 'El libro 2', author: 'Autor 2' });
+user2.books.push({ title: 'El libro 3', author: 'autor 3' });
+user3.books.push({ title: 'El libro 4', author: 'Autor 4' });
 
 console.log(user1.books);
 console.log(user2.books);
