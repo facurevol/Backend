@@ -24,7 +24,9 @@ io.on('connection', (socket) => {
         console.log(`(server) recibi: ${data}`)
     })
 
-    setInterval(() => { socket.emit('heartbeat', 'estoy vivo') }, 3000)
+    io.sockets.emit('mi mensaje', 'Esto lo recibe todo el mundo')
+
+    //setInterval(() => { socket.emit('heartbeat', 'estoy vivo') }, 3000)
 })
 
 const server = httpServer.listen(8080, () => {
